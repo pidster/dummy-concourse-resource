@@ -4,11 +4,11 @@ WORKDIR /go/src/github.com/pidster/dummy-concourse-resource
 
 COPY . .
 
-RUN GOARCH=amd64 GOOS=linux && \
-    go build -o outputs/in in/in.go && \
-    go build -o outputs/out out/out.go && \
-    go build -o outputs/check check/check.go \
-    chmod 755 outputs/*
+RUN GOARCH=amd64 GOOS=linux \
+ && go build -o outputs/in in/in.go \
+ && go build -o outputs/out out/out.go \
+ && go build -o outputs/check check/check.go \
+ && chmod 755 outputs/*
 
 FROM alpine:3.11
 
