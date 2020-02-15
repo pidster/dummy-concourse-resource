@@ -1,8 +1,8 @@
 package resource
 
 import (
-	"fmt"
-	"strconv"
+	_ "fmt"
+	_ "strconv"
 	"time"
 )
 
