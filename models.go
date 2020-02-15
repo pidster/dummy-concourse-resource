@@ -26,11 +26,11 @@ type Version struct {
 }
 
 type GetConfig struct {
-
+	Test string `json:"test,omitempty"`
 }
 
 type PutConfig struct {
-
+	Test string `json:"test,omitempty"`
 }
 
 type NameValue struct {
