@@ -14,6 +14,7 @@ FROM alpine:3.11
 
 RUN apk -U update \
  && apk upgrade --purge \
- && rm -rf /var/cache/apk/* 
+ && apk add bash \
+ && rm -rf /var/cache/apk/*
 
 COPY --from=builder /go/src/github.com/pidster/dummy-concourse-resource/outputs/* /opt/resource/
