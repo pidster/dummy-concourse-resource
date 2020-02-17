@@ -17,7 +17,7 @@ func main() {
 
 	response := resource.Response{
 		Version: resource.Version{
-			Ref:       "0",
+			Ref:       config.Version.Ref,
 			UpdatedAt: time.Now(),
 		},
 		Metadata: resource.Metadata{

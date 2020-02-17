@@ -26,11 +26,13 @@ type Version struct {
 }
 
 type GetConfig struct {
-	Test string `json:"test,omitempty"`
+	Source  Source  `json:"source"`
+	Version Version `json:"version"`
 }
 
 type PutConfig struct {
-	Test string `json:"test,omitempty"`
+	Source Source            `json:"source"`
+	Params map[string]string `json:"params,omitempty"`
 }
 
 type NameValue struct {

@@ -5,6 +5,7 @@ import (
 	resource "github.com/pidster/dummy-concourse-resource"
 	"log"
 	"os"
+	"time"
 )
 
 func main() {
@@ -17,7 +18,9 @@ func main() {
 		log.Fatal("Error processing initial request: " + err.Error())
 	}
 
-	versions = make([]resource.Version, 0)
+	t := time.Now()
+	versions = make([]resource.Version, 1)
+	versions[0] = resource.Version{Ref: t.Format("200601021504")}
 
 	if err := json.NewEncoder(os.Stdout).Encode(versions); err != nil {
 		log.Fatalf("Error encoding JSON to stdout %s", err.Error())
