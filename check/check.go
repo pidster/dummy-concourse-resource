@@ -20,7 +20,10 @@ func main() {
 
 	t := time.Now()
 	versions = make([]resource.Version, 1)
-	versions[0] = resource.Version{Ref: t.Format("200601021504")}
+	versions[0] = resource.Version{
+		Ref: t.Format("200601021504"),
+		UpdatedAt: t,
+	}
 
 	if err := json.NewEncoder(os.Stdout).Encode(versions); err != nil {
 		log.Fatalf("Error encoding JSON to stdout %s", err.Error())

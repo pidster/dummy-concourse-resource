@@ -5,7 +5,6 @@ import (
 	resource "github.com/pidster/dummy-concourse-resource"
 	"log"
 	"os"
-	"time"
 )
 
 func main() {
@@ -18,7 +17,7 @@ func main() {
 	response := resource.Response{
 		Version: resource.Version{
 			Ref:       config.Version.Ref,
-			UpdatedAt: time.Now(),
+			UpdatedAt: config.Version.UpdatedAt,
 		},
 		Metadata: resource.Metadata{
 			resource.NameValue{Name:"ConcourseUrl", Value:os.Getenv("ATC_EXTERNAL_URL")},
